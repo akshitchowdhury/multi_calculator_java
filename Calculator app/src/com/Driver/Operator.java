@@ -2,7 +2,9 @@
  * 
  */
 package com.Driver;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -28,6 +30,8 @@ public class Operator {
 		BMR bmr = new BMR();
 		Percentage per = new Percentage();
 		
+		Operator op = new Operator();
+		
      System.out.println("------Welcome to the Calculator Portal------");
      System.out.print("We provide a vriety of Calculation operations.");
      System.out.println("Pick your choice of calculation from the list below : ");
@@ -50,21 +54,33 @@ public class Operator {
 	{
 	case 1 : System.out.println("You have chosen the Arthimatic operator");
 	System.out.println("Choose your sub operator from the list below: ");
+	System.out.println();
+	
+	System.out.println("----------------------------------------------");
+	System.out.println();
+	
 	        // in = sc.nextInt();
+	 String[] sub_choice = {"1.Addition", "2.Subtraction","3.Multiplication", "4.Division"};
+     
+     for (int i = 0; i < sub_choice.length; i++) {
+ 		
+    	 System.out.println(sub_choice[i]);
+ 	}
+	         
+	       String select = sc.next();
 	        
-	        int sub_choice = sc.nextInt();
-	        
-	        switch(sub_choice) {
-			 case 1 : arth.Addition();
-			 break;
-			 case 2 : arth.Subtraction();
-			 break;
-			 case 3 : arth.Multiplication();;
-			 break;
-			 case 4 : arth.Division();
+	        switch(select) {
+			 case "1" : arth.Addition();
+			 op.main(args);
+			 case "2" : arth.Subtraction();
+			 op.main(args);
+			 case "3" : arth.Multiplication();;
+			 op.main(args);
+			 case "4" : arth.Division();
 			 
+			 op.main(args);
 			 }
-	         break;
+	         
 	case 2 : System.out.println("You have chosen the BMI operator");
 	         bmi.calcBMI();
 	         in = sc.nextInt();
